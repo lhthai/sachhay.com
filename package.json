@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "node --exec babel-node server/server.js",
+    "server": "babel-node server/server.js",
     "dev":"nodemon --exec babel-node server/server.js"
   },
   "keywords": [],
