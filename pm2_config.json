@@ -2,10 +2,9 @@
     "apps": [
         {
             "name": "sachhay",
-            "script": "babel-node server/server.js",
-            "watch": true,
-            "exec_interpreter": "babel-node",
-            "exec_mode": "fork"
+            "script": "npm",
+            "args": "run server",
+            "watch": true
         }
     ]
 }
