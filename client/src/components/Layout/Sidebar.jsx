@@ -31,7 +31,7 @@ const Sidebar = props => {
                       `
                 };
 
-                const { data } = await axios.post('http://localhost:8000/graphql', requestBody);
+                const { data } = await axios.post('/graphql', requestBody);
                 if (signal) {
                     setLoading(false)
                     setCategories(data.data.categories)

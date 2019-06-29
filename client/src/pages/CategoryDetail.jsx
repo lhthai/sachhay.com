@@ -45,7 +45,7 @@ const CategoryDetail = props => {
                   `
             };
 
-            const { data } = await axios.post('http://localhost:8000/graphql', requestBody);
+            const { data } = await axios.post('/graphql', requestBody);
             if (signal) {
                 dispatch({
                     type: FETCH_CATEGORY_SUCCESS,
