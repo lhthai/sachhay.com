@@ -37,10 +37,10 @@ app.get("*", (req, res) => {
 function main() {
     mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true })
         .then(() => {
-            app.listen(process.env.PORT);
+            app.listen(process.env.PORT, () => console.log(`App running on port ${process.env.PORT}`));
         })
         .catch(err => {
-            // console.log(err);
+            console.log(err);
         })
 }
 
