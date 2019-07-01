@@ -3,12 +3,12 @@ import bodyParser from 'body-parser';
 import expressGraphQL from "express-graphql";
 import cors from "cors";
 import mongoose from 'mongoose';
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
 import graphQLSchema from './graphql/schema'
 import graphQLResolvers from './graphql/resolvers'
 import path from 'path'
 
-dotenv.config()
+dotenv.config({ silent: process.env.NODE_ENV === 'production' });
 
 const app = express();
 
@@ -31,7 +31,6 @@ app.use(express.static(path.join(__dirname, "../client/build")))
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
-
 
 
 function main() {
