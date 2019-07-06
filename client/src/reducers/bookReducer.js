@@ -1,4 +1,8 @@
-import { SEARCH_BOOKS_REQUEST, SEARCH_BOOKS_FAILURE, SEARCH_BOOKS_SUCCESS } from './action_types'
+import {
+    SEARCH_BOOKS_REQUEST,
+    SEARCH_BOOKS_FAILURE,
+    SEARCH_BOOKS_SUCCESS
+} from './action_types'
 
 const bookReducer = (state, action) => {
     switch (action.type) {

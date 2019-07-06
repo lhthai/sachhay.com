@@ -16,6 +16,45 @@ const BookDetail = props => {
     const [category, setCategory] = useState({})
     const { book_url } = props.match.params;
 
+    const updateViewsCount = async (bookId, viewsCount) => {
+        try {
+            const requestBody = {
+                query: `
+                    query{
+                        updateBook(id:"${bookId}", views: "${viewsCount}"){
+                            id
+                            title
+                            author
+                            thumbnail
+                            views
+                            book_url
+                            download_epub
+                            download_mobi
+                            download_pdf
+                            category{
+                                id
+                                name
+                                category_url
+                            }                         
+                          }
+                    }
+                  `
+            };
+
+            const { data } = await axios.post('/graphql', requestBody);
+            if (signal) {
+                setLoading(false)
+                setBook(data.data.bookByBookUrl)
+                setCategory(data.data.bookByBookUrl.category)
+            }
+        } catch (error) {
+            if (signal) {
+                setLoading(false)
+                setError(error)
+            }
+        }
+    }
+
     useEffect(() => {
         setSignal(true)
         const fetchBook = async () => {

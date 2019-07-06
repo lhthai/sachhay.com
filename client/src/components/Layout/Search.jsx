@@ -17,8 +17,8 @@ const Search = ({ history }) => {
 
     return (
         <form className="navbar-right form-inline" onSubmit={handleSubmit}>
-            <input className="form-control" type="text" placeholder="Search book" value={query} onChange={handleChange} />
-            <button className="btn btn-primary my-2 my-sm-0" type="submit"><FontAwesomeIcon icon={faSearch} /></button>
+            <input className="form-control" aria-label="txtSearch" type="text" placeholder="Search book" value={query} onChange={handleChange} />
+            <button aria-label="btnSearch" className="btn btn-primary my-2 my-sm-0" type="submit"><FontAwesomeIcon icon={faSearch} /></button>
         </form>
     )
 }

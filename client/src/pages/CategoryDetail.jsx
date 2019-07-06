@@ -34,7 +34,7 @@ const CategoryDetail = props => {
                             description
                             category_url
                             count
-                            books{
+                            books {
                               id
                               title
                               book_url

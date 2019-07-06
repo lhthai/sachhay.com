@@ -75,7 +75,7 @@ const Topbar = props => {
         <div>
             <Navbar color="light" light expand="md" className="p-3">
                 <Link to="/" className="nav-link h2">sachhay.com</Link>
-                <NavbarToggler onClick={toggle} />
+                <NavbarToggler aria-label="btnToggler" onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mx-auto" navbar>
                         <NavItem className="mx-4">
