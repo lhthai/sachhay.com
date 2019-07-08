@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import expressGraphQL from "express-graphql";
 import cors from "cors";
 import mongoose from 'mongoose';
+import compression from 'compression'
 import dotenv from "dotenv";
 import graphQLSchema from './graphql/schema'
 import graphQLResolvers from './graphql/resolvers'
@@ -16,6 +17,7 @@ const app = express();
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(compression())
 
 app.use(
     "/graphql",

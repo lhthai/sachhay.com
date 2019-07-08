@@ -96,7 +96,7 @@ export async function removeCategory(args) {
 
 export async function categories() {
     try {
-        const categories = await Category.find();
+        const categories = await Category.find().sort({ "createdAt": 1 });
         return categories.map(category => {
             return {
                 ...category._doc,

@@ -48,7 +48,7 @@ export default buildSchema(`
         updateCategory (id: ID!, name: String, description: String): Category
         removeCategory (id: ID!): Category
         addBook(bookInput: BookInput): Book
-        updateBook (id: ID!, title: String, author: String, thumbnail: String, category: ID): Book
+        updateBook (id: ID!, title: String, author: String, thumbnail: String, category: ID, views: Int): Book
         removeBook (id: ID!): Book
         crawlBooks(url: String!, category: ID!): [Book]
     }
